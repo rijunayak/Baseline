@@ -26,4 +26,11 @@ public class ItemEntryTest {
 
         assertEquals(0.0, itemEntry.tax(), 0.00001);
     }
+
+    @Test
+    public void shouldHaveZeroTaxUnimportedMedicineItem() {
+        ItemEntry itemEntry = new ItemEntry(1, "packet of headache pills", 4.0, ItemEntry.NOT_IMPORTED);
+
+        assertEquals(0.0, itemEntry.tax(), 0.00001);
+    }
 }

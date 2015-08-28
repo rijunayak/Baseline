@@ -19,7 +19,7 @@ public class ItemEntry {
 
     public double tax() {
         if(!isImported) {
-            if(itemName.contains("chocolate") || itemName.contains("book")) {
+            if(itemName.contains("chocolate") || itemName.contains("book") || itemName.contains("headache pills")) {
                 return 0.0;
             }
         }
