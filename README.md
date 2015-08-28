@@ -9,7 +9,7 @@ To compute individual sales taxes of given items as well as total tax and grand 
 brew install ant
 ```
 
-##Run the specifications
+##Run the specifications and build the project
 Run the following command from terminal:
 ```
 ant
