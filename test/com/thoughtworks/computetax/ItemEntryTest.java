@@ -19,4 +19,11 @@ public class ItemEntryTest {
 
         assertEquals(0.0, itemEntry.tax(), 0.00001);
     }
+
+    @Test
+    public void shouldHaveZeroTaxUnimportedBookItem() {
+        ItemEntry itemEntry = new ItemEntry(1, "book", 6.0, ItemEntry.NOT_IMPORTED);
+
+        assertEquals(0.0, itemEntry.tax(), 0.00001);
+    }
 }

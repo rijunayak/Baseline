@@ -18,8 +18,11 @@ public class ItemEntry {
     }
 
     public double tax() {
-        if(!isImported && itemName.contains("chocolate"))
-            return 0.0;
+        if(!isImported) {
+            if(itemName.contains("chocolate") || itemName.contains("book")) {
+                return 0.0;
+            }
+        }
         return price;
     }
 }
