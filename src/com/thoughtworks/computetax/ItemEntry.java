@@ -1,8 +1,6 @@
 // A Entry in the receipt which should print its..
 package com.thoughtworks.computetax;
 
-import java.util.ArrayList;
-
 public class ItemEntry {
     private int quantity;
     private String itemName;
@@ -20,6 +18,8 @@ public class ItemEntry {
     }
 
     public double tax() {
-        return 0.0;
+        if(!isImported && itemName.contains("chocolate"))
+            return 0.0;
+        return price;
     }
 }
