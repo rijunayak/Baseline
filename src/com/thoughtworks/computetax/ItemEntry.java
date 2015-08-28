@@ -1,4 +1,4 @@
-// A Entry in the receipt which should print its..
+// An Item Entry has a quantity, item name, price, and its sales tax
 package com.thoughtworks.computetax;
 
 public class ItemEntry {
