@@ -25,7 +25,8 @@ public class ItemEntry {
     public double tax() {
         double tax = 0;
         if(!isImported) {
-            tax += (price * 0.1);
+            if(isTaxable)
+                tax += (price * 0.1);
         }
         return tax;
     }
