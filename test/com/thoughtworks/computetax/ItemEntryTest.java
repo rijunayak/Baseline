@@ -8,28 +8,21 @@ public class ItemEntryTest {
 
     @Test
     public void shouldHaveZeroTaxForZeroCostItem() {
-        ItemEntry itemEntry = new ItemEntry(1, "nothing", 0.0, ItemEntry.IMPORTED_ITEM);
+        ItemEntry itemEntry = new ItemEntry(1, "nothing", 0.0, false);
 
         assertEquals(0.0, itemEntry.tax(), 0.00001);
     }
 
     @Test
-    public void shouldHaveZeroTaxForUnimportedFoodItem() {
-        ItemEntry itemEntry = new ItemEntry(1, "box of chocolates", 5.0, ItemEntry.NOT_IMPORTED);
+    public void shouldRightlyReturnTaxIfAnItemIsTaxableAndUnimported() {
+        ItemEntry itemEntry = new ItemEntry(1, "perfume", 4.0, false);
 
-        assertEquals(0.0, itemEntry.tax(), 0.00001);
+        assertEquals(0.4, itemEntry.tax(), 0.00001);
     }
 
     @Test
-    public void shouldHaveZeroTaxUnimportedBookItem() {
-        ItemEntry itemEntry = new ItemEntry(1, "book", 6.0, ItemEntry.NOT_IMPORTED);
-
-        assertEquals(0.0, itemEntry.tax(), 0.00001);
-    }
-
-    @Test
-    public void shouldHaveZeroTaxUnimportedMedicineItem() {
-        ItemEntry itemEntry = new ItemEntry(1, "packet of headache pills", 4.0, ItemEntry.NOT_IMPORTED);
+    public void shouldReturnZeroTaxForUntaxableAndUnimportedItem() {
+        ItemEntry itemEntry = new ItemEntry(1, "chocolate", 1.5, false);
 
         assertEquals(0.0, itemEntry.tax(), 0.00001);
     }
