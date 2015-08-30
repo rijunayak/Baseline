@@ -33,4 +33,11 @@ public class ItemEntryTest {
 
         assertEquals(1.35, itemEntry.tax(), 0.0);
     }
+
+    @Test
+    public void shouldRightlyReturnTaxForImportedUntaxableItem() {
+        ItemEntry itemEntry = new ItemEntry(1, "imported box of chocolates", 13.35, true);
+
+        assertEquals(0.7, itemEntry.tax(), 0.0);
+    }
 }
