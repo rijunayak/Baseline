@@ -26,8 +26,12 @@ public class ItemEntry {
         double tax = 0;
         if(!isImported) {
             if(isTaxable)
-                tax += (price * 0.1);
+                tax += roundOff((price * 0.1));
         }
         return tax;
+    }
+
+    private double roundOff(double price) {
+        return ceil(price * 20) / 20;
     }
 }
