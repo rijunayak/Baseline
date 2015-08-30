@@ -15,22 +15,26 @@ public class ItemEntry {
         this.itemName = itemName;
         this.price = price;
         this.isImported = isImported;
-        if(!itemName.contains("chocolate") && !itemName.contains("book") && !itemName.contains("headache pills")) {
-            this.isTaxable = true;
-        } else {
-            this.isTaxable = false;
-        }
+        deduceTaxability();
     }
 
     public double tax() {
         double tax = 0;
         if(isTaxable) {
-            tax += roundOff(price * 0.1);
+            tax += roundOff(quantity * price * 0.1);
         }
         if(isImported) {
-            tax += roundOff(price * 0.05);
+            tax += roundOff(quantity * price * 0.05);
         }
         return tax;
+    }
+
+    private void deduceTaxability() {
+        if(!this.itemName.contains("chocolate") && !this.itemName.contains("book") && !this.itemName.contains("headache pills")) {
+            this.isTaxable = true;
+        } else {
+            this.isTaxable = false;
+        }
     }
 
     private double roundOff(double price) {

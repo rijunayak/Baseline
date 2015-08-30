@@ -40,4 +40,11 @@ public class ItemEntryTest {
 
         assertEquals(0.7, itemEntry.tax(), 0.0);
     }
+
+    @Test
+    public void shouldAccountForQuantityWhileReturningTax() {
+        ItemEntry itemEntry = new ItemEntry(2, "mouse pad", 13.35, false);
+
+        assertEquals(2.7, itemEntry.tax(), 0.0);
+    }
 }
