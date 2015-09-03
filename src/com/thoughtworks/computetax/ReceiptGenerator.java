@@ -5,4 +5,8 @@ import java.util.ArrayList;
 
 public class ReceiptGenerator {
     ArrayList<ItemEntry> itemEntryList;
+
+    public void parseInput(String input) {
+
+    }
 }

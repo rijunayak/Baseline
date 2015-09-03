@@ -47,4 +47,11 @@ public class ItemEntryTest {
 
         assertEquals(2.7, itemEntry.tax(), 0.0);
     }
+
+    @Test
+    public void itemEntryShouldFlattenItselfToDesiredOutputString() {
+        ItemEntry itemEntry = new ItemEntry(1, "mouse pad", 12.45, false);
+
+        assertEquals("1 mouse pad at 13.7", itemEntry.flattenItemEntryToString());
+    }
 }

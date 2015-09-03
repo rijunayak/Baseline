@@ -29,6 +29,10 @@ public class ItemEntry {
         return tax;
     }
 
+    public String flattenItemEntryToString() {
+        return Integer.toString(quantity) + " " + itemName + " at " + Double.toString(price + tax());
+    }
+
     private void deduceTaxability() {
         if(!this.itemName.contains("chocolate") && !this.itemName.contains("book") && !this.itemName.contains("headache pills")) {
             this.isTaxable = true;
